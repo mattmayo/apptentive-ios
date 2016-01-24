@@ -592,7 +592,8 @@ static NSURLCache *imageCache = nil;
 #pragma mark -
 
 - (BOOL)hideBranding {
-	return [[NSUserDefaults standardUserDefaults] boolForKey:ATAppConfigurationHideBrandingKey];
+	return YES; // TESTING
+	// return [[NSUserDefaults standardUserDefaults] boolForKey:ATAppConfigurationHideBrandingKey];
 }
 
 - (BOOL)notificationPopupsEnabled {
