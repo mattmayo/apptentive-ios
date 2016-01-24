@@ -156,7 +156,7 @@ typedef NS_ENUM(NSInteger, ATMessageCenterState) {
 	self.greetingView.titleLabel.text = self.interaction.greetingTitle;
 	self.greetingView.messageLabel.text = self.interaction.greetingBody;
 	self.greetingView.imageView.imageURL = self.interaction.greetingImageURL;
-	self.greetingView.aboutButton.hidden = !self.interaction.branding;
+	self.greetingView.aboutButton.hidden = YES;//!self.interaction.branding;
 	self.greetingView.isOnScreen = [ATConnect sharedConnection].showInfoButton ? YES : NO;
 
 	[self.greetingView.aboutButton setImage:[[ATBackend imageNamed:@"at_info"] imageWithRenderingMode:UIImageRenderingModeAlwaysTemplate] forState:UIControlStateNormal];
