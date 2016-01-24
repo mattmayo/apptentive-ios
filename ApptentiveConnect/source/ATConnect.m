@@ -67,6 +67,8 @@ NSString *const ATConnectCustomDeviceDataChangedNotification = @"ATConnectCustom
 - (id)init {
 	if ((self = [super init])) {
 		self.showEmailField = YES;
+		self.showProfileButton = NO;
+		self.showInfoButton = NO;
 		_customPersonData = [[NSMutableDictionary alloc] init];
 		_customDeviceData = [[NSMutableDictionary alloc] init];
 		_integrationConfiguration = [[NSMutableDictionary alloc] init];

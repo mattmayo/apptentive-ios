@@ -157,7 +157,7 @@ typedef NS_ENUM(NSInteger, ATMessageCenterState) {
 	self.greetingView.messageLabel.text = self.interaction.greetingBody;
 	self.greetingView.imageView.imageURL = self.interaction.greetingImageURL;
 	self.greetingView.aboutButton.hidden = !self.interaction.branding;
-	self.greetingView.isOnScreen = NO;
+	self.greetingView.isOnScreen = [ATConnect sharedConnection].showInfoButton ? YES : NO;
 
 	[self.greetingView.aboutButton setImage:[[ATBackend imageNamed:@"at_info"] imageWithRenderingMode:UIImageRenderingModeAlwaysTemplate] forState:UIControlStateNormal];
 	self.greetingView.aboutButton.accessibilityLabel = ATLocalizedString(@"About Apptentive", @"Accessibility label for 'show about' button");
@@ -184,7 +184,7 @@ typedef NS_ENUM(NSInteger, ATMessageCenterState) {
 	self.messageInputView.attachButton.accessibilityLabel = ATLocalizedString(@"Attach", @"Accessibility label for 'attach' button");
 	self.messageInputView.attachButton.accessibilityHint = ATLocalizedString(@"Attaches a photo or screenshot", @"Accessibility hint for 'attach'");
 
-	if (self.interaction.profileRequested) {
+	if (self.interaction.profileRequested && [ATConnect sharedConnection].showProfileButton) {
 		UIBarButtonItem *profileButtonItem = [[UIBarButtonItem alloc] initWithImage:[ATBackend imageNamed:@"at_account"] landscapeImagePhone:[ATBackend imageNamed:@"at_account"] style:UIBarButtonItemStylePlain target:self action:@selector(showWho:)];
 		profileButtonItem.accessibilityLabel = ATLocalizedString(@"Profile", @"Accessibility label for 'edit profile' button");
 		profileButtonItem.accessibilityHint = ATLocalizedString(@"Displays name and email editor.", @"Accessibility hint for 'edit profile' button");

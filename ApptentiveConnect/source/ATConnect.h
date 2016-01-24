@@ -134,6 +134,8 @@ Before calling any other methods on the shared `ATConnect` instance, set the API
 ///---------------------------------
 /** Toggles the display of an email field in the message panel. `YES` by default. */
 @property (assign, nonatomic) BOOL showEmailField;
+@property (assign, nonatomic) BOOL showProfileButton;
+@property (assign, nonatomic) BOOL showInfoButton;
 /** Set this if you want some custom text to appear as a placeholder in the feedback text box. */
 @property (copy, nonatomic) NSString *customPlaceholderText;
 #if TARGET_OS_IPHONE
@@ -432,6 +434,8 @@ Returns a Boolean value indicating whether the given event will cause an Interac
 @property (copy, nonatomic) NSString *_Nullable personName;
 /** The email address of the app user in form fields and communicating with Apptentive. */
 @property (copy, nonatomic) NSString *_Nullable personEmailAddress;
+@property (copy, nonatomic) NSString *_Nullable personProfilePhoto;
+
 
 /**
  Adds custom data associated with the current person.
